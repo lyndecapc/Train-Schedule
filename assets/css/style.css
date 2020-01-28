@@ -2,8 +2,34 @@ body {
     font-family: 'Libre Baskerville', serif;
 }
 
+.jumbotron {
+    top: 20px;
+}
 .form-group {
+    
     padding: 0 50px 0 50px;
 }
 
+.panel {
+    background-color: white;
+    
+}
 
+.panel-body {
+    border: #6c757d;
+}
+
+.panel-heading {
+    background-color: white;
+}
+
+h3 {
+    color: #4e5357;
+}
+
+.btn {
+    margin-left: 20px;
+}
+
+
+ 
