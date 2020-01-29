@@ -3,7 +3,12 @@ body {
 }
 
 .jumbotron {
-   
+        background-image: url("../images/photo-1506818144585-74b29c980d4b.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0em;
+        color: rgb(34, 34, 31);
+        font-weight: 900;
 }
 .form-group {
     
@@ -20,7 +25,8 @@ body {
 }
 
 .panel-heading {
-    background-color: white;
+    background-color: rgb(186, 213, 229);
+    
 }
 
 h3 {
