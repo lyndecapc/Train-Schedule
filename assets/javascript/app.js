@@ -25,7 +25,7 @@ $("#add-train").on("click", function(event) {
   var timeInput = moment($("#time-input").val().trim(), "H").format("X");
   var freqInput = $("#freq-input").val().trim();
 
-  // Creates local "temporary" object for holding employee data
+  // Creates local "temporary" object for holding train data
   var newTrain = {
     train: nameInput,
     destination: destInput,
@@ -33,7 +33,7 @@ $("#add-train").on("click", function(event) {
     frequency: freqInput
   };
 
-  // Uploads employee data to the database
+  // Uploads train data to the database
   database.ref().push(newTrain);
 
   // Logs everything to console
