@@ -1,3 +1,10 @@
+// Steps to complete:
+
+// 1. Initialize Firebase
+// 2. Create button for adding new train - then update the html + update the database
+// 3. Create a way to retrieve train data from the database.
+// 4. Create a way to calculate how many minutes away the train is
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyD-LCDhGu0ydoez0zxR0IhZsNu0PZeWCxY",
@@ -37,7 +44,7 @@ $("#add-train").on("click", function(event) {
   database.ref().push(newTrain);
 
   // Logs everything to console
-  console.log(newTrain.name);
+  console.log(newTrain.train);
   console.log(newTrain.destination);
   console.log(newTrain.time);
   console.log(newTrain.frequency);
