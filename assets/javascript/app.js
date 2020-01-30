@@ -22,7 +22,7 @@ $("#add-train").on("click", function(event) {
   // Grabs user input
   var nameInput = $("#train-name-input").val().trim();
   var destInput = $("#destination-input").val().trim();
-  var timeInput = moment($("#time-input").val().trim(), "MM/DD/YYYY").format("X");
+  var timeInput = moment($("#time-input").val().trim(), "H").format("X");
   var freqInput = $("#freq-input").val().trim();
 
   // Creates local "temporary" object for holding employee data
