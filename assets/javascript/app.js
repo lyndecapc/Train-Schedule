@@ -77,10 +77,10 @@ database.ref().on("child_added", function(childSnapshot) {
 
 
 // Assumptions
-var trainFreq = 3;
+var trainFreq = "";
 
 // Time is 3:30 AM
-var firstTime = "03:30";
+var firstTime = "";
 
 // First Time (pushed back 1 year to make sure it comes before current time)
 var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
