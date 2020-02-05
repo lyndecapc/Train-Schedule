@@ -22,14 +22,14 @@ var firebaseConfig = {
   // Create a variable to reference the database
   var database = firebase.database();
 
-  // 2. Button for adding Employees
+  // 2. Button for adding Trains
 $("#add-train").on("click", function(event) {
   event.preventDefault();
 
   // Grabs user input
   var nameInput = $("#train-name-input").val().trim();
   var destInput = $("#destination-input").val().trim();
-  var timeInput = moment($("#time-input").val().trim(), "H").format("X");
+  var timeInput = moment($("#time-input").val().trim(), "HH:mm").format("X");
   var freqInput = $("#freq-input").val().trim();
 
   // Creates local "temporary" object for holding train data
@@ -68,22 +68,14 @@ database.ref().on("child_added", function(childSnapshot) {
   var trainTime = childSnapshot.val().time;
   var trainFreq = childSnapshot.val().frequency;
 
-  // Employee Info
+  // Train Info
   console.log(trainName);
   console.log(trainDest);
   console.log(trainTime);
   console.log(trainFreq);
 
 
-
-// Assumptions
-var trainFreq = "";
-
-// Time is 3:30 AM
-var firstTime = "";
-
-// First Time (pushed back 1 year to make sure it comes before current time)
-var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+var firstTimeConverted = moment(trainTime, "X").subtract(1, "years");
 console.log(firstTimeConverted);
 
 // Current Time
@@ -104,7 +96,9 @@ console.log("MINUTES TILL TRAIN: " + minAway);
 
 // Next Train
 var trainArr = moment().add(minAway, "minutes");
-console.log("ARRIVAL TIME: " + moment(trainArr).format("hh:mm"));
+console.log("ARRIVAL TIME: " + moment(trainArr).format("minutes"));
+
+
 
 // Create the new row
 var newRow = $("<tr>").append(
@@ -117,4 +111,5 @@ var newRow = $("<tr>").append(
 
 // Append the new row to the table
 $("tbody").append(newRow);
+
 });
