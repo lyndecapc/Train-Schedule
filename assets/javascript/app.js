@@ -95,7 +95,7 @@ $("#add-train").on("click", function (event) {
   console.log("MINUTES TILL TRAIN: " + minAway);
 
   // Next Train
-  var trainArr = moment().add(minAway, "minutes");
+  var trainArr = moment().add(minAway, "minutes").format("LLL");
   console.log("ARRIVAL TIME: " + moment(trainArr).format("minutes"));
 
   // Create the new row
